@@ -14,6 +14,7 @@ metadata = MetaData()
 tweets = Table(
     "tweets", metadata,
     Column("id", Integer, primary_key=True),
+    Column("tweet_id", Integer, unique=True),
     Column("published_at", DateTime),
     Column("phrase", Text),
     Column("hashtags", Text),
