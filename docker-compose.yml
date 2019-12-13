@@ -1,0 +1,52 @@
+version: '3.3'
+
+services:
+  backend:
+    image: pro_sapient/sapient:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: uvicorn main:app --reload
+    volumes:
+      - ./src:/src
+    ports:
+      - 8004:8000
+    depends_on:
+      - redis
+      - rabbitmq
+    env_file:
+      - .env
+
+  redis:
+    image: "redis:4.0.1"
+    volumes:
+      - "redis_data:/data"
+
+  rabbitmq:
+    image: "rabbitmq:3.6.6-management"
+    hostname: "rabbitmq"
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "erlang_cookie"
+    volumes:
+      - "rabbitmq_data:/var/lib/rabbitmq"
+
+  db:
+    image: "postgres"
+    container_name: "sapient_postgres"
+    environment:
+      - POSTGRES_USER=john
+      - POSTGRES_PASSWORD=pwd0123456789
+      - POSTGRES_DB=sapient
+    ports:
+      - "54320:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+
+
+volumes:
+  redis_data:
+    driver: local
+  rabbitmq_data:
+    driver: local
+  postgres_data:
+    driver: local
