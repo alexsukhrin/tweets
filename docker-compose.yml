@@ -13,39 +13,33 @@ services:
       - 8000:8000
     depends_on:
       - db
-      - worker
+      #- worker
     env_file:
       - .env
 
   db:
     image: "postgres"
     container_name: "sapient_postgres"
-    environment:
-      - POSTGRES_USER=john
-      - POSTGRES_PASSWORD=pwd0123456789
-      - POSTGRES_DB=sapient
     ports:
       - "54320:5432"
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
-
-  worker:
-    image: pro_sapient/sapient:latest
-    build:
-      context: .
-      dockerfile: Dockerfile.worker
-    command: python worker.py
-    volumes:
-      - ./src:/src
-    depends_on:
-      - db
     env_file:
       - .env
 
+#  worker:
+#    image: pro_sapient/sapient:latest
+#    build:
+#      context: .
+#      dockerfile: Dockerfile.worker
+#    command: python worker.py
+#    volumes:
+#      - ./src:/src
+#    depends_on:
+#      - db
+#    env_file:
+#      - .env
+
 volumes:
-  redis_data:
-    driver: local
-  rabbitmq_data:
-    driver: local
   postgres_data:
     driver: local
