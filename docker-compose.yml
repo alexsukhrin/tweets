@@ -6,14 +6,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: uvicorn api:app --reload
+    command: uvicorn api:app --host 0.0.0.0 --port 8000 --reload
     volumes:
       - ./src:/src
     ports:
-      - 8000:8000
+      - 8004:8000
     depends_on:
       - db
-      #- worker
+      - worker
     env_file:
       - .env
 
@@ -27,18 +27,18 @@ services:
     env_file:
       - .env
 
-#  worker:
-#    image: pro_sapient/sapient:latest
-#    build:
-#      context: .
-#      dockerfile: Dockerfile.worker
-#    command: python worker.py
-#    volumes:
-#      - ./src:/src
-#    depends_on:
-#      - db
-#    env_file:
-#      - .env
+  worker:
+    image: pro_sapient/sapient:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    command: python worker.py
+    volumes:
+      - ./src:/src
+    depends_on:
+      - db
+    env_file:
+      - .env
 
 volumes:
   postgres_data:

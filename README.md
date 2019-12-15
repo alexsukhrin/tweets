@@ -14,6 +14,8 @@
     Топ 3 пользователей, которые сделали максимальное количество твитов 
     количество проанализированных твитов
 
+### Status
+[![Build Status](https://travis-ci.org/keyprqa/GitHubAPI.svg?branch=master)](https://travis-ci.org/keyprqa/GitHubAPI)
 
 ## run service
 `docker-compose build`

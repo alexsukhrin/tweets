@@ -17,17 +17,11 @@ class Parser:
 
     @property
     def db(self):
-        """
-        The func connect to db
-        :return: engine
-        """
+        """The func connect to db. """
         return self.conn.connect()
 
     def auth(self) -> str:
-        """
-        The function returns a token after authorization
-        :return: str
-        """
+        """The function returns a token after authorization. """
         data = {'grant_type': 'client_credentials'}
         headers = {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
         response = requests.post(url=self.conf.API_URL, data=data, headers=headers,
@@ -37,10 +31,7 @@ class Parser:
         return response['access_token']
 
     def handler(self) -> dict:
-        """
-        The function returns a response from the server as json.
-        :return: dict
-        """
+        """The function returns a response from the server as json. """
         access_token = self.auth()
         headers = {'Authorization': f'Bearer {access_token}'}
         params = {'q': self.conf.TWITTER_QUERY, 'count': self.conf.TWITTER_COUNT}
@@ -50,11 +41,7 @@ class Parser:
         return response
 
     def tags(self, item: dict) -> str:
-        """
-        The function selects hashtags from dict.
-        :param item:
-        :return: str
-        """
+        """The function selects hashtags from dict. """
         if len(item['entities']['hashtags']) > 0:
             hashtags = ','.join([i['text'] for i in item['entities']['hashtags']])
             self.log.debug(f'return {hashtags}')
@@ -63,10 +50,7 @@ class Parser:
         return ''
 
     def process(self) -> None:
-        """
-        The function collects and saves tweets to the database.
-        :return: None
-        """
+        """The function collects and saves tweets to the database. """
         data = self.handler()
         for item in data['statuses']:
             hashtags = self.tags(item)
@@ -88,12 +72,7 @@ class Parser:
 
 
 def main(run: bool, timeout: int) -> None:
-    """
-    The main function that starts the periodic process of parsing tweet.
-    :param run: bool
-    :param timeout int
-    :return: None
-    """
+    """The main function that starts the periodic process of parsing tweet. """
     logging.basicConfig()
     logger = logging.getLogger("proSapient.worker.tweets")
     logger.setLevel(logging.DEBUG)
