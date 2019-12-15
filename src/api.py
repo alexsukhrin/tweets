@@ -36,7 +36,7 @@ async def shutdown():
         await pool.close()
 
 
-@app.get("/",)
+@app.get("/", response_model=List[Tweets])
 async def tweets(offset: int = 0, limit: int = 100) -> ApiHandler.tweets:
     """The handler returns tweets."""
     return await ApiHandler(app=app).tweets(limit=limit, offset=offset)
