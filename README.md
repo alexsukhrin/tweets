@@ -15,7 +15,7 @@
     количество проанализированных твитов
 
 ### Status
-[![Build Status](https://travis-ci.org/keyprqa/GitHubAPI.svg?branch=master)](https://travis-ci.org/keyprqa/GitHubAPI)
+[![Build Status](https://travis-ci.org/alexsukhrin/proSapient.svg?branch=master)](https://travis-ci.org/alexsukhrin/proSapient)
 
 ## run service
 `docker-compose build`
