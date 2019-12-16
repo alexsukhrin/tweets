@@ -15,10 +15,12 @@ amount of analyzed tweets
 
 
 
-## run service
-`docker-compose build`
-`docker-compose up`
-`open 0.0.0.0:8004`
+## Project Launch Instructions run service
+```
+docker-compose build
+docker-compose up
+open 0.0.0.0:8004
+```
 
 ## example env file
 ```
