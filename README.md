@@ -1,22 +1,19 @@
 # proSapient
-Пользовательские истории
-Вот истории пользователей для начала:
-
-1. Я хочу, чтобы последние K твитов запрашивались по определенной фразе
-один раз за заданный период времени ( N ) (Периодическое фоновое задание)
-
-2. Я хочу иметь возможность видеть все уникальные твиты из пункта выше
-
-3. Я хочу видеть агрегированную статистику для каждой запрашиваемой фразы 
-за определенный период времени:
-
-    топ 3 хэштеги найдены в твитах
-    Топ 3 пользователей, которые сделали максимальное количество твитов 
-    количество проанализированных твитов
-
-### Status
 [![Build Status](https://travis-ci.org/alexsukhrin/proSapient.svg?branch=master)](https://travis-ci.org/alexsukhrin/proSapient)
 [![codecov](https://codecov.io/gh/alexsukhrin/proSapient/branch/master/graph/badge.svg)](https://codecov.io/gh/alexsukhrin/proSapient)
+
+User Stories
+
+Here are user stories to start from:
+
+I want to be able to get last K tweets queried by specific phrase once in a configured period of time (N) (Periodic background job)
+I want to be able to see all unique tweets from the point above
+I want to be able to see an aggregated statistic for each queried phrase for a given period of time:
+top 3 hashtags found in tweets
+top 3 users that made max amount of tweets
+amount of analyzed tweets
+
+
 
 ## run service
 `docker-compose build`
