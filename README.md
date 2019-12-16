@@ -16,7 +16,7 @@
 
 ### Status
 [![Build Status](https://travis-ci.org/alexsukhrin/proSapient.svg?branch=master)](https://travis-ci.org/alexsukhrin/proSapient)
-[![Build Status](https://codecov.io/gh/codecov/example-python/branch/master/graph/badge.svg)](https://codecov.io/gh/codecov/alexsukhrin/proSapient)
+[![codecov](https://codecov.io/gh/alexsukhrin/proSapient/branch/master/graph/badge.svg)](https://codecov.io/gh/alexsukhrin/proSapient)
 
 ## run service
 `docker-compose build`
