@@ -54,3 +54,4 @@ wcwidth==0.1.7
 websockets==8.1
 Werkzeug==0.16.0
 zipp==0.6.0
+flake8==3.7.9
