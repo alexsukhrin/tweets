@@ -1,5 +1,5 @@
 from starlette.testclient import TestClient
-from src.api import app, startup
+from api import app, startup
 
 
 async def test_tweets_view():
