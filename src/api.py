@@ -8,8 +8,8 @@ from .models import (
     Hashtags,
 )
 import asyncpg
-import config
-from handler import ApiHandler
+from . import config
+from .handler import ApiHandler
 
 app = FastAPI()
 
