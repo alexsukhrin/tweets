@@ -55,3 +55,5 @@ websockets==8.1
 Werkzeug==0.16.0
 zipp==0.6.0
 flake8==3.7.9
+codecov==2.0.15
+pytest-cov==2.8.1

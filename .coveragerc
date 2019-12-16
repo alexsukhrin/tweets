@@ -1,6 +1,6 @@
 [run]
-branch = True
 source = src, tests
+include=src/*
 
 [html]
 directory = htmlcov
