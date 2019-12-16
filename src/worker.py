@@ -1,7 +1,7 @@
 import requests
-import config
-from tables import tweets
-from tables import engine
+from . import config
+from .tables import tweets
+from .tables import engine
 from time import sleep
 import logging
 from sqlalchemy.exc import IntegrityError

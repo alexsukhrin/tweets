@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 from typing import List
-from models import (
+from .models import (
     Tweets,
     Amount,
     Users,
