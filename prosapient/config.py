@@ -3,8 +3,8 @@ import os
 HOST = os.getenv('HOST', '0.0.0.0')
 PORT = os.getenv('PORT', '8000')
 
-POSTGRES_USER = os.getenv('POSTGRES_USER', 'john')
-POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD', 'pwd0123456789')
+POSTGRES_USER = os.getenv('POSTGRES_USER', 'postgres')
+POSTGRES_PASSWORD = os.getenv('POSTGRES_PASSWORD', 'postgres')
 POSTGRES_DB = os.getenv('POSTGRES_DB', 'sapient')
 POSTGRES_PORT = os.getenv('POSTGRES_PORT', '5432')
 POSTGRES_HOST = os.getenv('POSTGRES_HOST', '127.0.0.1')

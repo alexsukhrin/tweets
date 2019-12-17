@@ -7,7 +7,7 @@ services:
   - postgresql
 
 before_install:
-  - psql -c "CREATE DATABASE sapient; CREATE USER john WITH password 'pwd0123456789'; GRANT ALL ON DATABASE sapient TO john;"
+  - psql -c 'create database sapient;' -U postgres
 
 install:
   - pip install codecov
