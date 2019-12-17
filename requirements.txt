@@ -14,7 +14,7 @@ ConfigArgParse==0.15.1
 contextvars==2.4
 coverage==5.0
 databases==0.2.6
-dataclasses==0.7
+dataclasses==0.6
 dnspython==1.16.0
 email-validator==1.0.5
 entrypoints==0.3
