@@ -1,10 +1,11 @@
 import requests
-from . import config
-from .tables import tweets
-from .tables import engine
 from time import sleep
 import logging
 from sqlalchemy.exc import IntegrityError
+
+from prosapient import config
+from prosapient.tables import tweets
+from prosapient.tables import engine
 
 
 class Parser:

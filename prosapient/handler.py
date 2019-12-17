@@ -1,10 +1,11 @@
-from .query import (
+from aiocache import cached
+
+from prosapient.query import (
     get_tweets,
     get_amount,
     get_hashtags,
     get_users,
 )
-from aiocache import cached
 
 
 class ApiHandler:

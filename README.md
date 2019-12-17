@@ -13,7 +13,9 @@ top 3 hashtags found in tweets
 top 3 users that made max amount of tweets
 amount of analyzed tweets
 
-
+Code Style Flake8 integration with Git
+flake8 --install-hook git
+git config --bool flake8.strict true
 
 ## Project Launch Instructions run service
 ```

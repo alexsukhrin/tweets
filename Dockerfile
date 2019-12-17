@@ -10,6 +10,6 @@ RUN pip3 install --upgrade pip
 
 RUN pip3 install --no-cache-dir -r /src/requirements.txt
 
-COPY ./src /src
+COPY prosapient /src
 
 EXPOSE 8000
