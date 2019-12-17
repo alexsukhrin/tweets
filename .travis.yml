@@ -6,15 +6,8 @@ python:
 services:
   - postgresql
 
-#addons:
-#  postgresql: "10"
-#  apt:
-#    packages:
-#    - postgresql-10
-#    - postgresql-client-10
-#env:
-#  global:
-#  - POSTGRES_PORT=5433
+before_install:
+  - psql -c 'CREATE DATABASE IF NOT EXISTS sapient; CREATE USER john WITH password 'pwd0123456789'; GRANT ALL ON DATABASE sapient TO john;'
 
 install:
   - pip install codecov
