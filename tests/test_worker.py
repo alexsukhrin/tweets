@@ -1,13 +1,14 @@
 from prosapient.worker import Parser
 from unittest.mock import MagicMock
 import unittest
+from prosapient import config
 
 
 class TestParser(unittest.TestCase):
     def setUp(self) -> None:
         self.logger = MagicMock()
         self.engine = MagicMock()
-        self.conf = MagicMock()
+        self.conf = config
         self.test_parser = Parser(settings=self.conf, log=self.logger, conn_db=self.engine)
 
     def test_db_property(self):
