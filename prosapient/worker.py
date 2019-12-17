@@ -3,9 +3,8 @@ from time import sleep
 import logging
 from sqlalchemy.exc import IntegrityError
 
-from prosapient import config
-from prosapient.tables import tweets
-from prosapient.tables import engine
+import config
+from tables import tweets, engine
 
 
 class Parser:

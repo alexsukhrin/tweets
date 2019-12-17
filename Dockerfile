@@ -1,15 +1,15 @@
 FROM tiangolo/uvicorn-gunicorn:python3.7
 
-RUN mkdir -p /src
+RUN mkdir -p /prosapient
 
-WORKDIR /src
+WORKDIR /prosapient
 
-COPY requirements.txt /src/requirements.txt
+COPY requirements.txt /prosapient/requirements.txt
 
 RUN pip3 install --upgrade pip
 
-RUN pip3 install --no-cache-dir -r /src/requirements.txt
+RUN pip3 install --no-cache-dir -r /prosapient/requirements.txt
 
-COPY prosapient /src
+COPY prosapient /prosapient
 
 EXPOSE 8000

@@ -1,6 +1,6 @@
 from aiocache import cached
 
-from prosapient.query import (
+from query import (
     get_tweets,
     get_amount,
     get_hashtags,

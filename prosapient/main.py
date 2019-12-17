@@ -3,14 +3,14 @@ import uvicorn
 import asyncpg
 from typing import List
 
-from prosapient.models import (
+from models import (
     Tweets,
     Amount,
     Users,
     Hashtags,
 )
-from prosapient import config
-from prosapient.handler import ApiHandler
+import config
+from handler import ApiHandler
 
 app = FastAPI()
 

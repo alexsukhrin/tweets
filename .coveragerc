@@ -1,6 +1,6 @@
 [run]
-source = src, tests
-include=src/*
+source = prosapient, tests
+include=prosapient/*
 
 [html]
 directory = htmlcov
