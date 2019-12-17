@@ -1,7 +1,11 @@
+dist: trusty
 language: python
 
 python:
   - "3.7"
+
+services:
+  - docker
 
 install:
   - pip install codecov
@@ -11,4 +15,4 @@ script:
   - pytest --cov=./
 
 after_script:
-- codecov
+  - codecov
