@@ -16,8 +16,13 @@ class ApiHandler:
         self.pool = self.app.pool
 
     @cached(key='ApiHandler:tweets', ttl=60)
-    async def tweets(self, limit: int, offset: int):
-        """The func return tweets."""
+    async def tweets(self, limit, offset):
+        """
+        The func return tweets.
+        :param limit: int
+        :param offset: int
+        :return: list
+        """
         async with self.pool.acquire() as conn:
             return [dict(x) for x in await get_tweets(conn=conn, limit=limit, offset=offset)]
 
