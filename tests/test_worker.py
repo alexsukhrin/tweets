@@ -5,6 +5,7 @@ from prosapient import config
 
 
 class TestParser(unittest.TestCase):
+
     def setUp(self) -> None:
         self.logger = MagicMock()
         self.engine = MagicMock()
