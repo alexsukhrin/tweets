@@ -1,12 +1,20 @@
 """Request handler API """
 from aiocache import cached  # type: ignore
 
-from .query import (
-    get_tweets,
-    get_amount,
-    get_hashtags,
-    get_users,
-)
+try:
+    from .query import (
+        get_tweets,
+        get_amount,
+        get_hashtags,
+        get_users,
+    )
+except ImportError:  # pragma: no cover
+    from query import (
+        get_tweets,
+        get_amount,
+        get_hashtags,
+        get_users,
+    )
 
 
 class ApiHandler:

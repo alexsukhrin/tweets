@@ -4,8 +4,12 @@ from time import sleep
 import logging
 from sqlalchemy.exc import IntegrityError  # type: ignore
 
-from . import config
-from .tables import tweets, engine
+try:
+    from . import config
+    from .tables import tweets, engine
+except ImportError:  # pragma: no cover
+    import config
+    from tables import tweets, engine
 
 
 class Parser:

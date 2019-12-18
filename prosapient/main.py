@@ -4,14 +4,24 @@ import uvicorn  # type: ignore
 import asyncpg  # type: ignore
 from typing import List
 
-from .models import (
-    Tweets,
-    Amount,
-    Users,
-    Hashtags,
-)
-from . import config
-from .handler import ApiHandler
+try:
+    from .models import (
+        Tweets,
+        Amount,
+        Users,
+        Hashtags,
+    )
+    from . import config
+    from .handler import ApiHandler
+except ImportError:  # pragma: no cover
+    from models import (
+        Tweets,
+        Amount,
+        Users,
+        Hashtags,
+    )
+    import config
+    from handler import ApiHandler
 
 app = FastAPI()
 
