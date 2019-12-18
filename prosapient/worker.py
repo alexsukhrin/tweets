@@ -4,13 +4,8 @@ from time import sleep
 import logging
 from sqlalchemy.exc import IntegrityError  # type: ignore
 
-try:
-    from . import config
-    from .tables import tweets, engine
-except ImportError:
-    # if the package path was not found in Docker
-    import config
-    from tables import tweets, engine
+from . import config
+from .tables import tweets, engine
 
 
 class Parser:

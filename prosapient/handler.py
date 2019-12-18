@@ -1,21 +1,12 @@
 """Request handler API """
 from aiocache import cached  # type: ignore
 
-try:
-    from .query import (
-        get_tweets,
-        get_amount,
-        get_hashtags,
-        get_users,
-    )
-except ImportError:
-    # if the package path was not found in Docker
-    from query import (
-        get_tweets,
-        get_amount,
-        get_hashtags,
-        get_users,
-    )
+from .query import (
+    get_tweets,
+    get_amount,
+    get_hashtags,
+    get_users,
+)
 
 
 class ApiHandler:
