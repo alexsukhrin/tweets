@@ -4,14 +4,25 @@ import uvicorn  # type: ignore
 import asyncpg  # type: ignore
 from typing import List
 
-from .models import (
-    Tweets,
-    Amount,
-    Users,
-    Hashtags,
-)
-from prosapient import config
-from prosapient.handler import ApiHandler
+try:
+    from .models import (
+        Tweets,
+        Amount,
+        Users,
+        Hashtags,
+    )
+    from . import config
+    from .handler import ApiHandler
+except ImportError:
+    # if the package path was not found in Docker
+    from models import (
+        Tweets,
+        Amount,
+        Users,
+        Hashtags,
+    )
+    import config
+    from handler import ApiHandler
 
 app = FastAPI()
 

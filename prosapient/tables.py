@@ -9,7 +9,11 @@ from sqlalchemy import (  # type: ignore
     BIGINT,
 )
 
-from .config import DATABASE_URL
+try:
+    from .config import DATABASE_URL
+except ImportError:
+    # if the package path was not found in Docker
+    from config import DATABASE_URL
 
 metadata = MetaData()
 
