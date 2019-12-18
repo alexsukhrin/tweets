@@ -7,9 +7,9 @@
 1. I want to be able to get last K tweets queried by specific phrase once in a configured period of time (N) (Periodic background job)
 2. I want to be able to see all unique tweets from the point above
 3. I want to be able to see an aggregated statistic for each queried phrase for a given period of time:
-- `top 3 hashtags found in tweets`
-- `top 3 users that made max amount of tweets`
-- `amount of analyzed tweets`
+    - `top 3 hashtags found in tweets`
+    - `top 3 users that made max amount of tweets`
+    - `amount of analyzed tweets`
 
 **Open Documentation API**
 ```
@@ -23,7 +23,7 @@ docker-compose up
 open 0.0.0.0:8004
 ```
 
-## example env file
+**example env file**
 ```
 HOST=0.0.0.0
 PORT=8000
