@@ -1,3 +1,6 @@
+"""Database queries. """
+
+
 async def get_tweets(conn, limit: int, offset: int) -> list:
     """The func return tweets from db. """
     sql = "select tw.tweet_id as id, tw.published_at, tw.phrase," \

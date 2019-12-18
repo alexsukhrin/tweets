@@ -1,6 +1,7 @@
+"""The main file to start the service. """
 from fastapi import FastAPI
-import uvicorn
-import asyncpg
+import uvicorn  # type: ignore
+import asyncpg  # type: ignore
 from typing import List
 
 from .models import (
@@ -38,25 +39,25 @@ async def shutdown():
 
 
 @app.get("/", response_model=List[Tweets])
-async def tweets(offset: int = 0, limit: int = 100) -> ApiHandler.tweets:
+async def tweets(offset: int = 0, limit: int = 100) -> list:
     """The handler returns tweets."""
     return await ApiHandler(app=app).tweets(limit=limit, offset=offset)
 
 
 @app.get("/amount", response_model=List[Amount])
-async def amount() -> ApiHandler.amount:
+async def amount() -> list:
     """The handler returns amount tweets."""
     return await ApiHandler(app=app).amount()
 
 
 @app.get("/hashtags", response_model=List[Hashtags])
-async def hashtags(limit: int = 3) -> ApiHandler.hashtags:
+async def hashtags(limit: int = 3) -> list:
     """The handler returns top three hashtags."""
     return await ApiHandler(app=app).hashtags(limit=limit)
 
 
 @app.get("/users", response_model=List[Users])
-async def users(limit: int = 3) -> ApiHandler.users:
+async def users(limit: int = 3) -> list:
     """The handler returns top three users."""
     return await ApiHandler(app=app).users(limit=limit)
 

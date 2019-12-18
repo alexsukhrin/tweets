@@ -1,3 +1,4 @@
+"""Global variables and settings. """
 import os
 
 HOST = os.getenv('HOST', '0.0.0.0')

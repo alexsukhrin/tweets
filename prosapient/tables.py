@@ -1,4 +1,4 @@
-from sqlalchemy import (
+from sqlalchemy import (  # type: ignore
     MetaData,
     Table,
     Column,

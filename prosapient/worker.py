@@ -1,13 +1,15 @@
+"""Worker who analyzes and fills the database with tweets. """
 import requests
 from time import sleep
 import logging
-from sqlalchemy.exc import IntegrityError
+from sqlalchemy.exc import IntegrityError  # type: ignore
 
 from . import config
 from .tables import tweets, engine
 
 
 class Parser:
+    """Main parser tweets. """
     __slots__ = 'conf', 'log', 'conn'
 
     def __init__(self, settings, log, conn_db):
@@ -16,7 +18,7 @@ class Parser:
         self.conn = conn_db
 
     @property
-    def db(self):
+    def db(self) -> engine.connect:
         """The func connect to db. """
         return self.conn.connect()
 

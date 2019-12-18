@@ -1,3 +1,4 @@
+"""Serializable Model Data. """
 from datetime import datetime
 from pydantic import BaseModel
 
