@@ -9,7 +9,7 @@ from sqlalchemy import (
     BIGINT,
 )
 
-from config import DATABASE_URL
+from .config import DATABASE_URL
 
 metadata = MetaData()
 

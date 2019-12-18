@@ -3,8 +3,8 @@ from time import sleep
 import logging
 from sqlalchemy.exc import IntegrityError
 
-import config
-from tables import tweets, engine
+from . import config
+from .tables import tweets, engine
 
 
 class Parser:
