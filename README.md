@@ -2,22 +2,21 @@
 [![Build Status](https://travis-ci.org/alexsukhrin/proSapient.svg?branch=master)](https://travis-ci.org/alexsukhrin/proSapient)
 [![codecov](https://codecov.io/gh/alexsukhrin/proSapient/branch/master/graph/badge.svg)](https://codecov.io/gh/alexsukhrin/proSapient)
 
-User Stories
+**What problems does the project solve**
 
-Here are user stories to start from:
+1. I want to be able to get last K tweets queried by specific phrase once in a configured period of time (N) (Periodic background job)
+2. I want to be able to see all unique tweets from the point above
+3. I want to be able to see an aggregated statistic for each queried phrase for a given period of time:
+- `top 3 hashtags found in tweets`
+- `top 3 users that made max amount of tweets`
+- `amount of analyzed tweets`
 
-I want to be able to get last K tweets queried by specific phrase once in a configured period of time (N) (Periodic background job)
-I want to be able to see all unique tweets from the point above
-I want to be able to see an aggregated statistic for each queried phrase for a given period of time:
-top 3 hashtags found in tweets
-top 3 users that made max amount of tweets
-amount of analyzed tweets
+**Open Documentation API**
+```
+http://0.0.0.0:8004/docs
+```
 
-Code Style Flake8 integration with Git
-flake8 --install-hook git
-git config --bool flake8.strict true
-
-## Project Launch Instructions run service
+**Project Launch Instructions:**
 ```
 docker-compose build
 docker-compose up
@@ -42,5 +41,8 @@ TWITTER_QUERY=украина
 SCHEDULE_WORK=5
 ```
 
-## open documentation
-`http://0.0.0.0:8004/docs`
+**Code Style Flake8 integration with Git**
+```
+flake8 --install-hook git
+git config --bool flake8.strict true
+```
