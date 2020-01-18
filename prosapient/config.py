@@ -1,4 +1,4 @@
-"""Global variables and settings. """
+"""Global variables and settings."""
 import os
 
 HOST = os.getenv('HOST', '0.0.0.0')
@@ -14,8 +14,8 @@ DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@" \
                f"{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
 
 
-TWITTER_CONSUMER_KEY = os.getenv('TWITTER_CONSUMER_KEY', '454aaArVGfr57ZETE4UXkfQR4')
-TWITTER_CONSUMER_SECRET = os.getenv('TWITTER_CONSUMER_SECRET', 'HPbBPW6GvEJRQveY1vncEhB9lmkhkA7uhoeOPWWMiyDLL3J45A')
+TWITTER_CONSUMER_KEY = os.getenv('TWITTER_CONSUMER_KEY')
+TWITTER_CONSUMER_SECRET = os.getenv('TWITTER_CONSUMER_SECRET')
 
 API_URL = os.getenv('API_URL', 'https://api.twitter.com/oauth2/token')
 TWEETS_URL = os.getenv('TWEETS_URL', 'https://api.twitter.com/1.1/search/tweets.json')

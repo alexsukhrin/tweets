@@ -1,5 +1,5 @@
-"""Install the config for caching. """
-from aiocache import caches  # type: ignore
+"""Install the config for caching."""
+from aiocache import caches
 
 
 caches.set_config({

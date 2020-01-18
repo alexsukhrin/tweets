@@ -1,4 +1,4 @@
-from sqlalchemy import (  # type: ignore
+from sqlalchemy import (
     MetaData,
     Table,
     Column,
@@ -8,10 +8,8 @@ from sqlalchemy import (  # type: ignore
     create_engine,
     BIGINT,
 )
-try:
-    from .config import DATABASE_URL
-except ImportError:  # pragma: no cover
-    from config import DATABASE_URL
+
+from .config import DATABASE_URL
 
 metadata = MetaData()
 
