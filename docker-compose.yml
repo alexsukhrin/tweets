@@ -19,16 +19,9 @@ services:
 
   db:
     image: "postgres"
-    container_name: "sapient_postgres"
-    ports:
-      - "54320:5432"
-    volumes:
-      - ./postgres-data:/var/lib/postgresql/data
-    env_file:
-      - .env
 
   worker:
-    image: pro_sapient/sapient:latest
+    image: worker_pro_sapient/worker_sapient:latest
     build:
       context: .
       dockerfile: Dockerfile.worker
@@ -39,7 +32,3 @@ services:
       - db
     env_file:
       - .env
-
-volumes:
-  postgres_data:
-    driver: local

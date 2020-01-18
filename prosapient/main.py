@@ -4,11 +4,9 @@ import uvicorn
 import asyncpg
 from typing import List
 
-
-from .models import Tweets, Amount, Users, Hashtags
-from . import config
-from .handler import ApiHandler
-
+from models import Tweets, Amount, Users, Hashtags
+import config
+from handler import ApiHandler
 
 app = FastAPI()
 
@@ -17,7 +15,6 @@ app = FastAPI()
 async def startup():
     """Create pool connect to db."""
     app.loop = await asyncpg.create_pool(
-        database=config.POSTGRES_DB,
         user=config.POSTGRES_USER,
         password=config.POSTGRES_PASSWORD,
         host=config.POSTGRES_HOST,

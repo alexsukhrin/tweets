@@ -1,8 +1,7 @@
 """Request handler API."""
 from aiocache import cached
 
-
-from .query import get_tweets, get_amount, get_hashtags, get_users
+from query import get_tweets, get_amount, get_hashtags, get_users
 
 
 class ApiHandler:
