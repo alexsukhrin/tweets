@@ -54,7 +54,7 @@ pytest==5.3.2
 pytest-asyncio==0.10.0
 pytest-cov==2.8.1
 python-multipart==0.0.5
-PyYAML==5.2
+PyYAML==5.4
 pyzmq==18.1.1
 requests==2.22.0
 Rx==1.6.1
